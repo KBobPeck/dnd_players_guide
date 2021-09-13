@@ -1,0 +1,36 @@
+@use "../themes/defaultTheme" as *;
+@use "../util/variables" as *;
+@use "../util/mixins" as *;
+
+.container.home {
+  max-width: 312px;
+  @include tablet{
+    max-width: 560px;
+  }
+  @include large {
+    max-width: 815px;
+  }
+  ul {
+    @include flex-center;
+    flex-wrap: wrap;
+    max-width: $max-width;
+  }
+  li {
+    width: 15rem;
+    margin: 0.25rem 0.25rem;
+    // font-size: larger;
+  }
+  a {
+    text-align: center;
+    text-transform: capitalize;
+    width: 100%;
+    display: block;
+    padding: 0.25rem 0.25rem;
+    border: 1px solid $primary-4;
+    border-radius: $radius;
+    background: darkgreen;
+    color: $white;
+    box-shadow: inset 0px 0px 10px $black;
+  }
+}
+

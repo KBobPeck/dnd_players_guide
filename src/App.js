@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Switch, Route } from "react-router-dom";
+import Footer from "./Components/Footer";
+import Navbar from "./Components/Navbar";
+import { Home, SubSection, AbilityScores } from "./Pages";
+import Conditions from "./Pages/Conditions";
+import Classes from './Pages/Classes'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <Navbar/>
+      <Switch>
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/ability-scores/:id">
+          <AbilityScores />
+        </Route>
+        <Route path="/conditions/:id">
+          <Conditions />
+        </Route>
+        <Route path="/classes/:id">
+          <Classes />
+        </Route>
+        <Route path="/:id">
+          <SubSection />
+        </Route>
+      </Switch>
+      <Footer/>
+    </main>
   );
 }
 

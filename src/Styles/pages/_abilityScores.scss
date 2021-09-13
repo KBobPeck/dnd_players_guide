@@ -1,0 +1,17 @@
+@use '../themes/defaultTheme' as *;
+@use '../util/variables'as *;
+@use '../util/mixins'as *;
+
+.container.ability{
+  .btn{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: $white ;
+    &:hover{
+      color: $black;
+    }
+  }
+  p{
+    margin-bottom: .25rem;
+  }
+}

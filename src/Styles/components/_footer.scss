@@ -1,0 +1,17 @@
+@use '../themes/defaultTheme' as *;
+@use '../util/variables'as *;
+@use '../util/mixins'as *;
+
+footer{
+  @include box(100%, 2.5rem);
+  text-align: center;
+  background: $black;
+  box-shadow: $light-shadow;
+  position: fixed;
+  bottom: 0;
+  @include flex-center;
+  a{
+    color: $white
+    ;
+  }
+}

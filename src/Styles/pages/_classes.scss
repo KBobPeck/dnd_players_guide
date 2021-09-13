@@ -1,0 +1,42 @@
+@use "../themes/defaultTheme" as *;
+@use "../util/variables" as *;
+@use "../util/mixins" as *;
+
+.container.classes {
+  min-width: 350px;
+  display: flex;
+  flex-wrap: wrap;
+  
+  .top {
+    width: 100%;
+    @include flex-center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    .title {
+      width:60%;
+      margin: 0;
+    }
+    .hit {
+      width: 40%;
+      margin: 0;
+      
+    }
+  }
+
+  .proficiencies {
+    @include flex-center-column;
+    justify-content: flex-start;
+    margin: 0 auto;
+    // flex-wrap: wrap;
+    a {
+      font-size: larger;
+      color: $primary-5;
+      min-width: 10rem;
+      box-shadow: none;
+    }
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

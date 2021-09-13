@@ -1,0 +1,47 @@
+@use "../themes/defaultTheme" as *;
+@use "../util/variables" as *;
+@use "../util/mixins" as *;
+
+.navbar {
+  height: 2.5rem;
+  width: 100%;
+  background: transparent;
+  // box-shadow: $light-shadow;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  .logo {
+    position: absolute;
+    bottom: -16px;
+    box-shadow: none;
+  }
+  img {
+    height: 3rem;
+    padding-left: 1.8rem;
+  }
+  .sidebar-toggle {
+    position: fixed;
+    top: 2rem;
+    left: 3rem;
+    font-size: 2rem;
+    background: transparent;
+    border-color: transparent;
+    color: $primary-5;
+    transition: $transition;
+    cursor: pointer;
+    animation: bounce 2s ease-in-out infinite;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

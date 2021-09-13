@@ -1,0 +1,35 @@
+@use '../themes/defaultTheme' as *;
+@use '../util/variables'as *;
+@use '../util/mixins'as *;
+
+.sub{
+  .links{
+    @include flex-center;
+    flex-wrap: wrap;
+  }
+  .link{
+    width: 15rem;
+    text-align: center;
+    border: 1px solid $primary-4;
+    background: darkgreen;
+    color: $white;
+    box-shadow: inset 0px 0px 10px $black;
+    border-radius: $radius;
+    margin: 0.25rem;
+    padding: 0.25rem 0.25rem;
+  }
+  .btn{
+    text-align: center;
+    width: 100%;
+    display: block;
+    
+    border-radius: $radius;
+    background: $black;
+    color: $white;
+    &:hover{
+      background: $white;
+      color: $black;
+    }
+  }
+  
+}
