@@ -3,9 +3,16 @@
 @use '../util/mixins'as *;
 
 .container {
-  width: 90vw;
+  // width: 90vw;
+  max-width: 312px;
+  @include tablet {
+    max-width: 560px;
+  }
+  @include large {
+    max-width: 815px;
+  }
   margin: 3rem 0;
-  max-width: $fixed-width;
+  // max-width: $fixed-width;
   background: $black;
   border-radius: $radius;
   padding: 1rem 1rem;
@@ -13,7 +20,7 @@
   h3 {
     font-weight: normal;
     text-transform: none;
-    margin-bottom: .75rem;
+    margin-bottom: 0.75rem;
   }
 
   .buttons {
@@ -48,21 +55,32 @@
   box-shadow: none;
   margin-left: 0.5rem;
   margin-top: 1rem;
-  margin-bottom: .4rem;
-  &:hover{
+  margin-bottom: 0.4rem;
+  &:hover {
     color: $black;
     background: transparent;
   }
 }
 
-a{
+a.linkbtn {
   // box-shadow: inset -1px -1px 2px $white
+  text-align: center;
+  text-transform: capitalize;
+  width: 15rem;
+  font-weight: 700;
+  display: block;
+  margin: 0.25rem;
+  padding: 0.25rem 0.25rem;
+  // border: 1px solid $primary-6;
+  border-radius: $radius;
+  background: $primary-4;
+  color: $black;
+  box-shadow: inset 0px 0px 8px $black;
 }
 
-main{
+main {
   min-height: 100vh;
   @include flex-center;
   flex-direction: column;
   // margin: 4.5rem 0rem 2.75rem;
 }
-

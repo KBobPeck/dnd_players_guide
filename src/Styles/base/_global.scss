@@ -18,13 +18,13 @@ main {
 ul {
   list-style-type: none;
 }
-a{
+a {
   text-decoration: none;
 }
 .link {
   text-decoration: none;
   color: $black;
-  &:visited{
+  &:visited {
     color: $black;
   }
 }
@@ -50,7 +50,7 @@ h4 {
   font-size: 0.875rem;
 }
 p {
-  margin-bottom: 1.25rem;
+  // margin-bottom: 1.25rem;
   color: $grey-9;
 }
 @media screen and (min-width: 800px) {

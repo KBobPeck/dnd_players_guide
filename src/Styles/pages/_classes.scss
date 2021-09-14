@@ -6,20 +6,20 @@
   min-width: 350px;
   display: flex;
   flex-wrap: wrap;
-  
+  transition: $transition;
+
   .top {
     width: 100%;
     @include flex-center;
     justify-content: space-between;
     margin-bottom: 1rem;
     .title {
-      width:60%;
+      width: 60%;
       margin: 0;
     }
     .hit {
       width: 40%;
       margin: 0;
-      
     }
   }
 
@@ -27,12 +27,24 @@
     @include flex-center-column;
     justify-content: flex-start;
     margin: 0 auto;
-    // flex-wrap: wrap;
-    a {
-      font-size: larger;
-      color: $primary-5;
-      min-width: 10rem;
-      box-shadow: none;
+    flex-wrap: nowrap;
+    height: 2rem;
+    overflow: hidden;
+    ul {
+      @include flex-center;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      width: 18rem;
+    }
+    li {
+      width: 9rem;
+      a {
+        // font-size: ;
+
+        color: $primary-5;
+        min-width: 10rem;
+        box-shadow: none;
+      }
     }
   }
 

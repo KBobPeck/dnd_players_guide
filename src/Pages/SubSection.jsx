@@ -18,7 +18,9 @@ const SubSection = () => {
           const { name, index } = link;
 
           return (
-              <Link className="link" key={i} to={`/${id}/${index}`}>{name}</Link>
+            <Link className="linkbtn" key={i} to={`/${id}/${index}`}>
+              {name}
+            </Link>
           );
         })}
         <Link className="btn" to="/">

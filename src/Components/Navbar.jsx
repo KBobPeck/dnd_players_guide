@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import logo from "../util/images/DnDlogo.svg";
+import logo from "../assets/images/DnDlogo.svg";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
