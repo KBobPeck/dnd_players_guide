@@ -22,6 +22,24 @@
       margin: 0;
     }
   }
+  h4 {
+    text-align: center;
+  }
+  
+  .equip {
+    @include flex-center-column;
+    justify-content: flex-start;
+    margin: 0 auto;
+    flex-wrap: nowrap;
+    height: 2rem;
+    overflow: hidden;
+
+    a {
+      width: 8rem;
+      // @include flex-center;
+      justify-content: flex-start;
+    }
+  }
 
   .proficiencies {
     @include flex-center-column;
@@ -30,24 +48,33 @@
     flex-wrap: nowrap;
     height: 2rem;
     overflow: hidden;
-    ul {
-      @include flex-center;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-      width: 18rem;
-    }
-    li {
-      width: 9rem;
-      a {
-        // font-size: ;
+    margin-bottom: 1rem;
+    transition: $transition;
+  }
+  ul {
+    @include flex-center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 18rem;
+  }
+  h3 {
+    margin-top: 0;
+  }
+  h4 {
+    margin-top: 1rem;
+  }
+  li {
+    width: 7.75rem;
+    margin-left: 1.25rem;
+    list-style-type: circle;
+    a {
+      font-size: 0.875rem;
 
-        color: $primary-5;
-        min-width: 10rem;
-        box-shadow: none;
-      }
+      color: $white;
+      min-width: 10rem;
+      box-shadow: none;
     }
   }
-
   .btn {
     width: 100%;
   }

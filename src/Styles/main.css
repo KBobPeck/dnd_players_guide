@@ -240,6 +240,11 @@ h3 {
 
 h4 {
   font-size: 0.875rem;
+  color: #ffb833;
+}
+
+h5 {
+  color: #ffdd9e;
 }
 
 p {
@@ -386,7 +391,20 @@ main {
   color: #ffb833;
   transition: all 0.5s linear;
   cursor: pointer;
-  animation: bounce 2s ease-in-out infinite;
+  -webkit-animation: bounce 2s ease-in-out infinite;
+          animation: bounce 2s ease-in-out infinite;
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 @keyframes bounce {
@@ -408,7 +426,14 @@ main {
   border-radius: 50%;
   border: 3px solid #eee;
   border-top-color: #ffa600;
-  animation: spinner 0.6s linear infinite;
+  -webkit-animation: spinner 0.6s linear infinite;
+          animation: spinner 0.6s linear infinite;
+}
+
+@-webkit-keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes spinner {
@@ -516,7 +541,10 @@ footer a {
   width: 40%;
   margin: 0;
 }
-.container.classes .proficiencies {
+.container.classes h4 {
+  text-align: center;
+}
+.container.classes .equip {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -527,7 +555,24 @@ footer a {
   height: 2rem;
   overflow: hidden;
 }
-.container.classes .proficiencies ul {
+.container.classes .equip a {
+  width: 8rem;
+  justify-content: flex-start;
+}
+.container.classes .proficiencies {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0 auto;
+  flex-wrap: nowrap;
+  height: 2rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  transition: all 0.5s linear;
+}
+.container.classes ul {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -535,11 +580,20 @@ footer a {
   justify-content: flex-start;
   width: 18rem;
 }
-.container.classes .proficiencies li {
-  width: 9rem;
+.container.classes h3 {
+  margin-top: 0;
 }
-.container.classes .proficiencies li a {
-  color: #ffb833;
+.container.classes h4 {
+  margin-top: 1rem;
+}
+.container.classes li {
+  width: 7.75rem;
+  margin-left: 1.25rem;
+  list-style-type: circle;
+}
+.container.classes li a {
+  font-size: 0.875rem;
+  color: #eee;
   min-width: 10rem;
   box-shadow: none;
 }
