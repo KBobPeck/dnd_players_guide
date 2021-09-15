@@ -223,7 +223,6 @@ h4 {
   letter-spacing: 0.1rem;
   text-transform: capitalize;
   line-height: 1.25;
-  margin-bottom: 0.75rem;
 }
 
 h1 {
@@ -299,7 +298,6 @@ h4 {
 .container h3 {
   font-weight: normal;
   text-transform: none;
-  margin-bottom: 0.75rem;
 }
 .container .buttons {
   display: flex;
@@ -318,6 +316,22 @@ h4 {
     width: 95vw;
   }
 }
+.underline {
+  width: 90%;
+  height: 2px;
+  background-color: #ffa600;
+}
+
+.border-right {
+  border-right: 1px solid #ffa600;
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .btn {
   text-transform: uppercase;
   text-align: center;
@@ -391,20 +405,7 @@ main {
   color: #ffb833;
   transition: all 0.5s linear;
   cursor: pointer;
-  -webkit-animation: bounce 2s ease-in-out infinite;
-          animation: bounce 2s ease-in-out infinite;
-}
-
-@-webkit-keyframes bounce {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: scale(1);
-  }
+  animation: bounce 2s ease-in-out infinite;
 }
 
 @keyframes bounce {
@@ -426,14 +427,7 @@ main {
   border-radius: 50%;
   border: 3px solid #eee;
   border-top-color: #ffa600;
-  -webkit-animation: spinner 0.6s linear infinite;
-          animation: spinner 0.6s linear infinite;
-}
-
-@-webkit-keyframes spinner {
-  to {
-    transform: rotate(360deg);
-  }
+  animation: spinner 0.6s linear infinite;
 }
 
 @keyframes spinner {
@@ -532,6 +526,7 @@ footer a {
   justify-content: center;
   justify-content: space-between;
   margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 .container.classes .top .title {
   width: 60%;
@@ -541,8 +536,56 @@ footer a {
   width: 40%;
   margin: 0;
 }
-.container.classes h4 {
+.container.classes h4,
+.container.classes h3,
+.container.classes h5 {
   text-align: center;
+}
+.container.classes .hit {
+  width: 50%;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+.container.classes .hit p {
+  width: 100%;
+  text-align: center;
+}
+.container.classes .saving {
+  width: 50%;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  border-right: 1px solid #ffa600;
+}
+.container.classes .saving .stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+}
+.container.classes .saving a {
+  text-align: center;
+  width: 8rem;
+  color: #eee;
+}
+.container.classes .saving a:visited {
+  color: #eee;
+}
+.container.classes .multiclass {
+  justify-content: flex-start;
+  margin: 0 auto;
+  flex-wrap: nowrap;
+  height: 2rem;
+  overflow: hidden;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.container.classes .multiclass h4 {
+  margin-bottom: 0.5rem;
+}
+.container.classes .multiclass h5 {
+  width: 45%;
 }
 .container.classes .equip {
   display: flex;
@@ -554,6 +597,7 @@ footer a {
   flex-wrap: nowrap;
   height: 2rem;
   overflow: hidden;
+  margin-top: 1rem;
 }
 .container.classes .equip a {
   width: 8rem;
@@ -571,6 +615,7 @@ footer a {
   overflow: hidden;
   margin-bottom: 1rem;
   transition: all 0.5s linear;
+  margin-top: 1rem;
 }
 .container.classes ul {
   display: flex;
@@ -585,6 +630,7 @@ footer a {
 }
 .container.classes h4 {
   margin-top: 1rem;
+  margin-bottom: 0.5rem;
 }
 .container.classes li {
   width: 7.75rem;

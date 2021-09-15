@@ -13,6 +13,7 @@
     @include flex-center;
     justify-content: space-between;
     margin-bottom: 1rem;
+    margin-top: 1rem;
     .title {
       width: 60%;
       margin: 0;
@@ -22,10 +23,66 @@
       margin: 0;
     }
   }
-  h4 {
+  h4,
+  h3,
+  h5 {
     text-align: center;
   }
-  
+  .hit {
+    width: 50%;
+    // display: flex;
+    // flex-wrap: wrap;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    p {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  .saving {
+    width: 50%;
+    // display: flex;
+    // flex-wrap: wrap;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    border-right: 1px solid $primary-4;
+    .stats {
+      @include flex-center;
+      justify-content: space-around;
+    }
+    a {
+      text-align: center;
+      width: 8rem;
+      color: $white;
+      &:visited {
+        color: $white;
+      }
+    }
+  }
+
+  .multiclass {
+    // @include flex-center-column;
+    justify-content: flex-start;
+    margin: 0 auto;
+    flex-wrap: nowrap;
+    height: 2rem;
+    overflow: hidden;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    h4 {
+      margin-bottom: 0.5rem;
+    }
+    // border-right: 1px solid $primary-4;
+    .titles {
+      // justify-content: space-between;
+    }
+    h5 {
+      width: 45%;
+    }
+  }
+
   .equip {
     @include flex-center-column;
     justify-content: flex-start;
@@ -33,7 +90,7 @@
     flex-wrap: nowrap;
     height: 2rem;
     overflow: hidden;
-
+    margin-top: 1rem;
     a {
       width: 8rem;
       // @include flex-center;
@@ -50,7 +107,9 @@
     overflow: hidden;
     margin-bottom: 1rem;
     transition: $transition;
+    margin-top: 1rem;
   }
+
   ul {
     @include flex-center;
     flex-wrap: wrap;
@@ -62,6 +121,7 @@
   }
   h4 {
     margin-top: 1rem;
+    margin-bottom: 0.5rem;
   }
   li {
     width: 7.75rem;

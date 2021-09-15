@@ -5,6 +5,7 @@ import Levels from "../Components/Levels";
 // import Die  '../util/images/emptyDie'
 
 const Classes = () => {
+  // size changing for proficiencies
   const startRef = useRef(null);
   const [startPlus, setStartPlus] = useState(true);
 
@@ -18,6 +19,8 @@ const Classes = () => {
       startRef.current.style.height = "auto";
     }
   };
+
+  //size changing for equipment
   const equipRef = useRef(null);
   const [equipPlus, setEquipPlus] = useState(true);
 
@@ -32,6 +35,20 @@ const Classes = () => {
     }
   };
 
+  //size changing for Multiclass
+  const multiRef = useRef(null);
+  const [multiPlus, setMultiPlus] = useState(true);
+  const handleMulti = () => {
+    // console.log(equipRef.current.style.height);
+    if (multiRef.current.style.height === "auto") {
+      setMultiPlus(true);
+      multiRef.current.style.height = "2rem";
+    } else {
+      setMultiPlus(false);
+      multiRef.current.style.height = "auto";
+    }
+  };
+
   const { data: classes, loading: loading1 } = useFetch(
     window.location.pathname
   );
@@ -41,12 +58,13 @@ const Classes = () => {
   console.log(classes, levels);
   const {
     hit_die: hit,
-    multiclassing,
+    multi_classing,
     proficiencies: profs,
     proficiency_choices: pchoose,
     starting_equipment: equip,
     starting_equipment_options: echoose,
     subclasses,
+    saving_throws,
     name,
   } = classes;
   if (loading1 || loading2) {
@@ -57,8 +75,43 @@ const Classes = () => {
     <article className="container classes">
       <div className="top">
         <h2 className="title">{name}</h2>
-        <h3 className="hit">Hit Die: d{hit}</h3>
       </div>
+      <div className="underline"></div>
+      <div className="saving">
+        <h3>Saving Throws</h3>
+        <div className="stats">
+          {saving_throws.map((each) => {
+            return (
+              <Link to={`/ability-scores/${each.index}`}>{each.name}</Link>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="hit">
+        <h3>Hit Die</h3>
+        <p>D{hit}</p>
+      </div>
+      <div className="underline"></div>
+
+      <div className="multiclass" ref={multiRef}>
+        <h3 onClick={handleMulti}>Multi Class {multiPlus ? "+" : "-"}</h3>
+        <h4>Prerequisites</h4>
+        <div className="flex-row titles">
+          <h5 className="border-right">Ability Score</h5>
+          <h5 className="">Minimum Score</h5>
+        </div>
+        <ul>
+          {multi_classing.prerequisites.map((each) => {
+            // each is each prereq with ability_score (STR)
+            // and minimum_score (13)
+            <li className="flex-row">
+              <Link></Link>
+            </li>;
+          })}
+        </ul>
+      </div>
+      <div className="underline"></div>
 
       <div className="proficiencies" ref={startRef}>
         <h3 onClick={handleStart}>Proficiencies {startPlus ? "+" : "-"}</h3>
@@ -92,6 +145,7 @@ const Classes = () => {
           );
         })}
       </div>
+      <div className="underline"></div>
 
       <div className="equip" ref={equipRef}>
         <h3 onClick={handleEquip}>Equipment {equipPlus ? "+" : "-"}</h3>
@@ -154,32 +208,40 @@ const Classes = () => {
                     }
                     return (
                       <div className="test">
-                        <h5 style={{textAlign:'center'}}>both</h5>
+                        <h5 style={{ textAlign: "center" }}>both</h5>
                         <ul>
                           {arr.map((item) => {
                             console.log(arr);
                             if (item.equipment) {
-                              return <li>
-                                <Link
-                                  key={i}
-                                  to={`/equipment/${item.equipment.index}`}
-                                >
-                                  {item.equipment.name} ({item.quantity})
-                                </Link>
-                              </li>;
+                              return (
+                                <li>
+                                  <Link
+                                    key={i}
+                                    to={`/equipment/${item.equipment.index}`}
+                                  >
+                                    {item.equipment.name} ({item.quantity})
+                                  </Link>
+                                </li>
+                              );
                             } else {
-                              return <li>
-                                <Link
-                                  key={i}
-                                  to={`/equipment-categories/${item.equipment_option.from.equipment_category.index}`}
-                                >
-                                  {item.equipment_option.choose} from {item.equipment_option.from.equipment_category.index}
-                                </Link>
-                              </li>;
+                              return (
+                                <li>
+                                  <Link
+                                    key={i}
+                                    to={`/equipment-categories/${item.equipment_option.from.equipment_category.index}`}
+                                  >
+                                    {item.equipment_option.choose} from{" "}
+                                    {
+                                      item.equipment_option.from
+                                        .equipment_category.index
+                                    }
+                                  </Link>
+                                </li>
+                              );
                             }
                           })}
                         </ul>
-                        <h5 style={{textAlign:'center'}}>or</h5>
+                        <h5 style={{ textAlign: "center" }}>or</h5>
                       </div>
                     );
                   } else if (each.equipment_category) {
@@ -214,6 +276,7 @@ const Classes = () => {
           );
         })}
       </div>
+
       <Levels {...levels} />
       <Link className="btn" to="/classes">
         back to Classes

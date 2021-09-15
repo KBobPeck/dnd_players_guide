@@ -20,7 +20,7 @@
   h3 {
     font-weight: normal;
     text-transform: none;
-    margin-bottom: 0.75rem;
+    // margin-bottom: 0.75rem;
   }
 
   .buttons {
@@ -37,6 +37,19 @@
   .section {
     width: 95vw;
   }
+}
+
+.underline {
+  @include box(90%, 2px);
+  background-color: $primary-4;
+}
+
+.border-right {
+  border-right: 1px solid $primary-4;
+}
+
+.flex-row {
+  @include flex-center;
 }
 
 .btn {

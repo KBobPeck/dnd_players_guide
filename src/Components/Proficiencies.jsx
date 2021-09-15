@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const Proficiencies = ({ data }) => {
-  return <li className="proficiency"></div>;
+  return <div className="proficiency"></div>;
 };
 
 export default Proficiencies;
