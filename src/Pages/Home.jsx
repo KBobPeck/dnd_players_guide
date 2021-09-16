@@ -1,7 +1,7 @@
 import React from "react";
 import { links } from "../util/consts";
 import { Link } from "react-router-dom";
-const filterList = ["backgrounds", "feats", "equipment"];
+const filterList = ["backgrounds", "feats", ];
 
 const Home = () => {
   return (

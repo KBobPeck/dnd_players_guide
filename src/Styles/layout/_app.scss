@@ -42,6 +42,7 @@
 .underline {
   @include box(90%, 2px);
   background-color: $primary-4;
+  margin-bottom: .5rem;
 }
 
 .border-right {
@@ -86,9 +87,9 @@ a.linkbtn {
   padding: 0.25rem 0.25rem;
   // border: 1px solid $primary-6;
   border-radius: $radius;
-  background: $primary-4;
-  color: $black;
-  box-shadow: inset 0px 0px 8px $black;
+  background: $black;
+  color: $primary-5;
+  box-shadow: inset 0px 0px 2px $primary-5, 4px 4px 5px black, ;
 }
 
 main {

@@ -11,6 +11,7 @@ const Conditions = () => {
   }
   return (
     <article className="container conditions">
+      <div className="underline"></div>
       <div className="cond">
         <h3>{name}</h3>
         {desc.map((each) => {

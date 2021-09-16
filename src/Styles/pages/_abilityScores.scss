@@ -11,7 +11,16 @@
       color: $black;
     }
   }
-  p{
-    margin-bottom: .25rem;
+  li{
+    // margin-bottom: .2rem;
+    list-style-type: disc;
+    color: $white;
+    &:visited{
+      color: $white;
+    }
+  }
+  h3{
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
   }
 }

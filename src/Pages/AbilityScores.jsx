@@ -14,8 +14,9 @@ const AbilityScores = () => {
       <div className="title">
         <h2>{full_name}</h2>
       </div>
+      <div className="underline"></div>
       <p>{desc[0]}</p>
-      <h3>when to use a {full_name} check:</h3>
+      <h3>when to check {full_name}:</h3>
       <p>{desc[1]}</p>
       <div className="skills">
         
@@ -27,7 +28,7 @@ const AbilityScores = () => {
           console.log(newURL);
           return (
             <Link to={newURL}>
-              <p>{name}</p>
+              <li>{name}</li>
             </Link>
           );
         }): <p>No Skills are effected by {full_name.toLowerCase()}</p>

@@ -12,7 +12,7 @@
     width: 100%;
     @include flex-center;
     justify-content: space-between;
-    margin-bottom: 1rem;
+    // margin-bottom: 1rem;
     margin-top: 1rem;
     .title {
       width: 60%;
@@ -29,25 +29,32 @@
     text-align: center;
   }
   .hit {
-    width: 50%;
+    width: 35%;
     // display: flex;
     // flex-wrap: wrap;
     flex-direction: column;
     margin-bottom: 1rem;
-    margin-top: 1rem;
+    margin-top: .5rem;
+    h3{
+      margin-bottom: 0.5rem;
+    }
     p {
       width: 100%;
       text-align: center;
     }
   }
   .saving {
-    width: 50%;
+    
+    width: 65%;
     // display: flex;
     // flex-wrap: wrap;
     flex-direction: column;
     margin-bottom: 1rem;
-    margin-top: 1rem;
+    margin-top: .5rem;
     border-right: 1px solid $primary-4;
+    h3{
+      margin-bottom: 0.5rem;
+    }
     .stats {
       @include flex-center;
       justify-content: space-around;
