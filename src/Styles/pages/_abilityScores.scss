@@ -3,6 +3,8 @@
 @use '../util/mixins'as *;
 
 .container.ability{
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   .btn{
     margin-top: 2rem;
     margin-bottom: 1rem;
@@ -22,5 +24,12 @@
   h3{
     margin-bottom: 0.5rem;
     margin-top: 1rem;
+  }
+  li{
+    list-style-type: circle;
+    margin-left: 1rem;
+    &::marker{
+      color:$primary-4
+    }
   }
 }

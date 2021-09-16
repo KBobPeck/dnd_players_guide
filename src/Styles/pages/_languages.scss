@@ -1,0 +1,21 @@
+@use "../themes/defaultTheme" as *;
+@use "../util/variables" as *;
+@use "../util/mixins" as *;
+
+.languages {
+  .title {
+    display: grid;
+    align-items: baseline;
+  }
+  li {
+    margin-left: 2rem;
+    list-style: circle;
+    color: $white;
+    &::marker{
+      color: $primary-4;
+    }
+  }
+  h3{
+    margin-top: 1rem;
+  }
+}

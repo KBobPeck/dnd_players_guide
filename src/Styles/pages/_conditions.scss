@@ -1,0 +1,27 @@
+@use '../themes/defaultTheme' as *;
+@use '../util/variables'as *;
+@use '../util/mixins'as *;
+
+.conditions{
+  li{
+    margin-top: 1rem;
+    list-style-type: circle;
+    margin-left: 1.2rem;
+    color: $white;
+    &::marker{
+      color: $primary-5;
+    }
+  }
+  p{
+    margin-top: .5rem;
+  }
+  span{
+    color: $primary-5;
+  }
+  .numerical{
+    list-style-type:none;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    margin-right: 2rem;
+  }
+}

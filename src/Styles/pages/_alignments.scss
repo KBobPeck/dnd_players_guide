@@ -1,0 +1,9 @@
+@use '../themes/defaultTheme' as *;
+@use '../util/variables'as *;
+@use '../util/mixins'as *;
+
+.alignments{
+  .underline{
+    margin-bottom: 1rem;
+  }
+}

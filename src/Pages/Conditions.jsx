@@ -11,14 +11,28 @@ const Conditions = () => {
   }
   return (
     <article className="container conditions">
+      <h3>{name}</h3>
       <div className="underline"></div>
-      <div className="cond">
-        <h3>{name}</h3>
-        {desc.map((each) => {
-          return <p>{each}</p>;
+      <ul>
+        {desc.map((each, i) => {
+          const list = each
+            .split("")
+            .filter((each) => each !== "-")
+            .join("")
+            .trim();
+          console.log(Number(list[0]));
+          if (isNaN(list[0])) {
+            return <li key={i}>{list}</li>;
+          } else {
+            return (
+              <li key={i} className="numerical">
+                <span>{list.substring(0, 1)}:</span> {list.substring(1)}
+              </li>
+            );
+          }
         })}
-      </div>
-      
+      </ul>
+
       <Link className="btn" to="/conditions">
         back to Conditions
       </Link>

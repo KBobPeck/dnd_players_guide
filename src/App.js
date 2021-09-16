@@ -5,6 +5,9 @@ import Navbar from "./Components/Navbar";
 import { Home, SubSection, AbilityScores } from "./Pages";
 import Conditions from "./Pages/Conditions";
 import Classes from './Pages/Classes'
+import Alignments from "./Pages/Alignments";
+import Languages from "./Pages/Languages";
+import Error from "./Pages/Error";
 
 function App() {
   return (
@@ -14,7 +17,7 @@ function App() {
         <Route path="/" exact>
           <Home />
         </Route>
-        <Route path="/ability-scores/:id">
+        <Route exact path="/ability-scores/:id">
           <AbilityScores />
         </Route>
         <Route path="/conditions/:id">
@@ -23,8 +26,17 @@ function App() {
         <Route path="/classes/:id">
           <Classes />
         </Route>
+        <Route path="/alignments/:id">
+          <Alignments />
+        </Route>
+        <Route path="/languages/:id">
+          <Languages />
+        </Route>
         <Route path="/:id">
           <SubSection />
+        </Route>
+        <Route path="*">
+          <Error />
         </Route>
       </Switch>
       <Footer/>

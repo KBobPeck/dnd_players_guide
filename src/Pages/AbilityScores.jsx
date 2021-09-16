@@ -22,12 +22,12 @@ const AbilityScores = () => {
         
         <h3>Affected Skills</h3>
         {skills.length ? 
-        skills.map((skill) => {
+        skills.map((skill, i) => {
           const { name, url } = skill;
           const newURL = url.substring(4);
           console.log(newURL);
           return (
-            <Link to={newURL}>
+            <Link key={i} to={newURL}>
               <li>{name}</li>
             </Link>
           );
