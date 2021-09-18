@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { useFetch } from "../util/useFetch";
 import { Link } from "react-router-dom";
 import Levels from "../Components/Levels";
@@ -8,11 +8,6 @@ import Equipment from "../Components/classesComps/Equipment";
 // import Die  '../util/images/emptyDie'
 
 const Classes = () => {
-  
-
- 
-
-
   const { data: classes, loading: loading1 } = useFetch(
     window.location.pathname
   );
@@ -44,9 +39,11 @@ const Classes = () => {
       <div className="saving">
         <h3>Saving Throws</h3>
         <div className="stats">
-          {saving_throws.map((each) => {
+          {saving_throws.map((each, i) => {
             return (
-              <Link to={`/ability-scores/${each.index}`}>{each.name}</Link>
+              <Link key={i} to={`/ability-scores/${each.index}`}>
+                {each.name}
+              </Link>
             );
           })}
         </div>
@@ -58,15 +55,15 @@ const Classes = () => {
       </div>
       <div className="underline"></div>
 
-      <MultiClass multi_classing={multi_classing}/>
+      <MultiClass multi_classing={multi_classing} />
 
       <div className="underline"></div>
 
-      <Proficiencies profs={profs} pchoose={pchoose}/>
-      
+      <Proficiencies profs={profs} pchoose={pchoose} />
+
       <div className="underline"></div>
 
-      <Equipment echoose={echoose} equip={equip}/>
+      <Equipment echoose={echoose} equip={equip} />
 
       <Levels {...levels} />
       <Link className="btn" to="/classes">

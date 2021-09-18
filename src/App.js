@@ -4,15 +4,16 @@ import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 import { Home, SubSection, AbilityScores } from "./Pages";
 import Conditions from "./Pages/Conditions";
-import Classes from './Pages/Classes'
+import Classes from "./Pages/Classes";
 import Alignments from "./Pages/Alignments";
 import Languages from "./Pages/Languages";
 import Error from "./Pages/Error";
+import MagicItem from "./Pages/MagicItem";
 
 function App() {
   return (
     <main>
-      <Navbar/>
+      <Navbar />
       <Switch>
         <Route path="/" exact>
           <Home />
@@ -32,6 +33,9 @@ function App() {
         <Route path="/languages/:id">
           <Languages />
         </Route>
+        <Route path="/magic-items/:id">
+          <MagicItem />
+        </Route>
         <Route path="/:id">
           <SubSection />
         </Route>
@@ -39,7 +43,7 @@ function App() {
           <Error />
         </Route>
       </Switch>
-      <Footer/>
+      <Footer />
     </main>
   );
 }

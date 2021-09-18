@@ -42,7 +42,7 @@
 .underline {
   @include box(90%, 2px);
   background-color: $primary-4;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .border-right {
@@ -89,7 +89,7 @@ a.linkbtn {
   border-radius: $radius;
   background: $black;
   color: $primary-5;
-  box-shadow: inset 0px 0px 2px $primary-5, 4px 4px 5px black, ;
+  box-shadow: inset 0px 0px 2px $primary-5, 4px 4px 5px black;
 }
 
 main {
@@ -99,13 +99,13 @@ main {
   // margin: 4.5rem 0rem 2.75rem;
 }
 
-input{
+input {
   color: $primary-7;
   margin: 1rem auto;
   border-bottom: 1px solid $primary-6;
   outline: none;
   width: 100%;
-  &::placeholder{
-    color: $primary-6;
+  &::placeholder {
+    color: $grey-6;
   }
 }

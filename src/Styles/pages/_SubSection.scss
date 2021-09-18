@@ -2,12 +2,12 @@
 @use '../util/variables'as *;
 @use '../util/mixins'as *;
 
-.sub{
-  .links{
+.sub {
+  .links {
     @include flex-center;
     flex-wrap: wrap;
   }
-  .link{
+  .link {
     width: 15rem;
     text-align: center;
     border: 1px solid $primary-4;
@@ -18,18 +18,27 @@
     margin: 0.25rem;
     padding: 0.25rem 0.25rem;
   }
-  .btn{
+  .btn {
     text-align: center;
     width: 100%;
     display: block;
-    
+
     border-radius: $radius;
     background: $black;
     color: $white;
-    &:hover{
+    &:hover {
       background: $white;
       color: $black;
     }
   }
-  
+  // .header {
+  //   display: grid;
+  //   grid-template-columns: 2fr 1fr 1fr;
+  //   align-items: baseline;
+  // }
+  .page-name {
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+  }
 }

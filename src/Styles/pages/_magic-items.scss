@@ -1,0 +1,45 @@
+@use '../themes/defaultTheme' as *;
+@use '../util/variables' as *;
+@use '../util/mixins' as *;
+
+.magic-item {
+  li {
+    list-style-type: circle;
+    margin-top: 1rem;
+  }
+  .numerical,
+  .dice {
+    color: $white;
+    list-style-type: none;
+    margin: 1rem;
+    // @include flex-center-column
+    // border-left: 1px solid $primary-4;
+    // padding-left: 0.5rem;
+    flex-wrap: wrap;
+    span {
+      color: $primary-4;
+    }
+  }
+  .dice {
+    color: $primary-4;
+    font-size: 1.25rem;
+    text-align: center;
+    // border: none;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-transform: capitalize;
+  }
+  .numerical {
+    text-align: start;
+  }
+  .status {
+    list-style-type: none;
+    color: $white;
+    margin: 1rem;
+    border-left: 1px solid $primary-4;
+    padding-left: 0.5rem;
+    span {
+      color: $primary-4;
+    }
+  }
+}

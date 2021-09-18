@@ -62,9 +62,8 @@ const Equipment = ({ equip, echoose }) => {
                   const { choose, from } = equipment_option;
                   // console.log(each);
                   return (
-                    <li>
+                    <li key={i}>
                       <Link
-                        key={i}
                         to={`/equipment-categories/${from.equipment_category.index}`}
                       >
                         {choose} from {from.equipment_category.name}
@@ -80,15 +79,12 @@ const Equipment = ({ equip, echoose }) => {
                     <div className="test">
                       <h5 style={{ textAlign: "center" }}>both</h5>
                       <ul>
-                        {arr.map((item) => {
+                        {arr.map((item, i) => {
                           console.log(arr);
                           if (item.equipment) {
                             return (
-                              <li>
-                                <Link
-                                  key={i}
-                                  to={`/equipment/${item.equipment.index}`}
-                                >
+                              <li key={i}>
+                                <Link to={`/equipment/${item.equipment.index}`}>
                                   {item.equipment.name} ({item.quantity})
                                 </Link>
                               </li>
